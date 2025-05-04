@@ -1,0 +1,26 @@
+# kubectl create secret tls ingress-tls --key mykey.key --cert STAR_singhritesh85_com.crt --namespace bankapp --context=aks-cluster
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: bankapp-ingress-stage
+  namespace: bankapp
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - bankapp-stage.singhritesh85.com
+    secretName: ingress-tls
+  rules:
+  - host: bankapp-stage.singhritesh85.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: bankapp-folo
+            port:
+              number: 80
