@@ -1,6 +1,6 @@
 # terraform-bankapp-multicloud
 ```
-1. First of all clone this repository and change the directory to "terraform-bankapp-multicloud".
+1. First of all clone this repository and change the directory to "terraform-differentbranch-multibranch-multicloud-nonprod".
 2. Run the shell script initial-setup.sh only once on your k8s-management-node or terraform-server. As this script will install the kubectl, helm and uninstall awscli version 1.x then install awscli version 2.x. After running this shell script just logout from the logged-in user and then login again.
 3. Provide SSH Private Key in the file user_data_blackbox_exporter.sh, user_data_grafana.sh, user_data_jenkins_master.sh, user_data_jenkins_slave.sh, user_data_loki.sh, user_data_nexus.sh, user_data_prometheus.sh and user_data_sonarqube.sh
 4. Provide SSH Private Key in the file mykey.pem and assign 600 permission on this file using the command chmod 600 mykey.pem.
